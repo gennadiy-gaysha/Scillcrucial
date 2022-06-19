@@ -1,4 +1,4 @@
-const { splitTheBill } = require('../bill');
+const { splitTheBill } = require('../bill_0');
 
 describe('Testing splitTheBill function', function () {
   test('number of members', function () {

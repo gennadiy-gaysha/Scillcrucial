@@ -1,4 +1,4 @@
-const { formatMoney } = require('../format$');
+const { formatMoney } = require('../format_0');
 
 describe('Testing format to $', function () {
   test('testing typeof', function () {
