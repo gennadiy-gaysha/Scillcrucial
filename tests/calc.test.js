@@ -1,27 +1,30 @@
-const { TypeError, basicOp } = require('../calc');
+const { basicOp } = require('../calc');
+// import { basicOp } from '../calc';
+const { TypeOfError } = require('../error');
+// import { TypeOfError, TypeOfError1, TypeOfError2 } from '../error';
 
 describe('Testing The Calc', function () {
   test('testing typeof', function () {
-    expect(basicOp('*', '', 5)).toThrow(TypeError);
-    expect(basicOp('*', [], 5)).toThrow(TypeError);
-    expect(basicOp('*', {}, 5)).toThrow(TypeError);
-    expect(basicOp('*', undefined, 5)).toThrow(TypeError);
-    expect(basicOp('*', null, 5)).toThrow(TypeError);
+    expect(basicOp('*', '', 5)).toThrow(TypeOfError());
+    expect(basicOp('*', [], 5)).toThrow(TypeOfError());
+    expect(basicOp('*', {}, 5)).toThrow(TypeOfError());
+    expect(basicOp('*', undefined, 5)).toThrow(TypeOfError());
+    expect(basicOp('*', null, 5)).toThrow(TypeOfError());
   });
-  // test('testing for NaN', function () {
-  //   expect(basicOp('*', NaN, 5)).toBe('value1(2) should not be equal to NaN');
-  // });
-  // test('testing for Number.MAX_VALUE', function () {
-  //   expect(basicOp('*', Number.MAX_VALUE, 5)).toBe('value1(2) is too large');
-  // });
-  // test('testing number multiplication', function () {
-  //   expect(basicOp('*', 0, 5)).toBe(0);
-  //   expect(basicOp('*', 0, 0)).toBe(0);
-  //   expect(basicOp('*', -5, -100)).toBe(500);
-  //   expect(basicOp('*', -5, 100)).toBe(-500);
-  //   expect(basicOp('*', 0.1, 5)).toBe(0.5);
-  // });
 });
+// test('testing for NaN', function () {
+//   expect(basicOp('*', NaN, 5)).toBe('value1(2) should not be equal to NaN');
+// });
+// test('testing for Number.MAX_VALUE', function () {
+//   expect(basicOp('*', Number.MAX_VALUE, 5)).toBe('value1(2) is too large');
+// });
+// test('testing number multiplication', function () {
+//   expect(basicOp('*', 0, 5)).toBe(0);
+//   expect(basicOp('*', 0, 0)).toBe(0);
+//   expect(basicOp('*', -5, -100)).toBe(500);
+//   expect(basicOp('*', -5, 100)).toBe(-500);
+//   expect(basicOp('*', 0.1, 5)).toBe(0.5);
+// });
 
 // 1) value1 и value2 должны быть числами
 // 2) value1 и value2 не должны быть Number.MAX_VALUE
