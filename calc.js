@@ -1,25 +1,22 @@
-const { TypeOfError } = require('../error');
-
-// import { TypeOfError, TypeOfError1, TypeOfError2 } from './error';
-
-function basicOp(operation, value1, value2) {
-  if (typeof value1 !== 'number' || typeof value2 !== 'number') {
-    throw new TypeOfError(
+exports.basicOp = function basicOp(operation, value1, value2) {
+  if (typeof value1 !== 'number' || typeof value2 !== 'number')
+    throw new MyError(
       `Both typeof value1 (${typeof value1}) and typeof value2 (${typeof value2}) should have typeof number`
     );
+
+  if (operation === '+') return value1 + value2;
+  if (operation === '-') return value1 - value2;
+  if (operation === '*') return value1 * value2;
+  if (operation === '/') return value1 / value2;
+};
+
+class MyError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'MyError';
   }
 }
 
-console.log(basicOp('*', 'jk', 3));
-module.exports = { basicOp };
+exports = { MyError };
 
-// if (isNaN(value1) || isNaN(value2))
-//   return 'value1(2) should not be equal to NaN';
-// if (value1 >= Number.MAX_VALUE || value2 >= Number.MAX_VALUE)
-//   return 'value1(2) is too large';
-// let result;
-// if (result === Number.MAX_VALUE) return 'value1(2) is too large';
-// if (operation === '+') return value1 + value2;
-// if (operation === '-') return value1 - value2;
-// if (operation === '*') return value1 * value2;
-// if (operation === '/') return value1 / value2;
+// console.log(this.basicOp('+', 3, 5));
