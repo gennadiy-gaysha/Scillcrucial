@@ -5,7 +5,7 @@ const { basicOp, MyError } = require('../calc');
 
 describe('Testing The Calc', function () {
   test('testing typeof', function () {
-    expect(basicOp('*', '', 5)).toThrow(MyError);
+    expect(basicOp('*', '', 5)).toThrow(new MyError());
   });
 });
 //   expect(basicOp('*', [], 5)).toBe('value1(2) should be a number');

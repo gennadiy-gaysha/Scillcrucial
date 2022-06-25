@@ -18,5 +18,4 @@ class MyError extends Error {
 }
 
 exports = { MyError };
-
 // console.log(this.basicOp('+', 3, 5));
