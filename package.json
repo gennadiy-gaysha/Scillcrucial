@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "casual": "^1.6.2"
   },
   "devDependencies": {
     "jest": "^28.1.1"

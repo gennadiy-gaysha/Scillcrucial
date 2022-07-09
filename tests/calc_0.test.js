@@ -15,6 +15,14 @@ describe('Testing The Calc', function () {
     expect(basicOp('*', Number.MAX_VALUE, 5)).toBe('value1(2) is too large');
   });
   test('testing number multiplication', function () {
+    // const testCase = [{ val_1: 5, val_2: 4, res: 20 }];
+    // testCase.forEach((item) => expect(item.val_1 * item.val_2).toBe(item.res));
+
+    const testCase = [{ arguments: ['*', 4, 5], res: 20 }];
+    testCase.forEach((item) =>
+      expect(basicOp(...item.arguments)).toBe(item.res)
+    );
+
     expect(basicOp('*', 0, 5)).toBe(0);
     expect(basicOp('*', 0, 0)).toBe(0);
     expect(basicOp('*', -5, -100)).toBe(500);
