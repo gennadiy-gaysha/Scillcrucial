@@ -1,11 +1,13 @@
 // https://www.codewars.com/kata/5667e8f4e3f572a8f2000039
-exports.accum = function accum(s) {
-  const arr = s.toUpperCase().split('');
-  const result = arr.reduce((acc, rec, index) => {
-    return [...acc, rec + rec.toLowerCase().repeat(index)];
-  }, []);
-  return result.join('-');
-};
+exports.accum = (s) =>
+  s
+    .toUpperCase()
+    .split('')
+    .reduce(
+      (acc, rec, index) => [...acc, rec + rec.toLowerCase().repeat(index)],
+      []
+    )
+    .join('-');
 console.log(this.accum('abcdefghijklmnopqrstuvwxyz'));
 
 // Условие:

@@ -1,29 +1,21 @@
 // https://www.codewars.com/kata/57e1e61ba396b3727c000251
 // решил тремя способами, тестами проверил все три варианта решения:
-// exports.stringClean = function stringClean(s) {
-//   return s.replace(/[0-9]/g, '');
-// };
-// console.log(this.stringClean('0123456789'));
+exports.stringClean = (s) =>
+  s
+    .split('')
+    .reduce((acc, rec) => (isNaN(parseInt(rec)) ? [...acc, rec] : acc), [])
+    .join('');
+console.log(this.stringClean('A1 A1! AAA   3J4K5L@!!!'));
 // --------------------------------------------------------------------
-// exports.stringClean = function stringClean(s) {
-//   return s
-//     .split('')
-//     .filter((it) => isNaN(parseInt(it)))
-//     .join('');
-// };
-// console.log(this.stringClean('Adgre2321 A1sad! A2A3A4 fv3fdv3J544K5L@'));
-// --------------------------------------------------------------------
-exports.stringClean = function stringClean(s) {
-  const arr = s.split('');
-  const result = arr.reduce((acc, rec) => {
-    if (isNaN(parseInt(rec))) {
-      return [...acc, rec];
-    }
-    return acc;
-  }, []);
-  return result.join('');
-};
+exports.stringClean = (s) =>
+  s
+    .split('')
+    .filter((it) => isNaN(parseInt(it)))
+    .join('');
 console.log(this.stringClean('Adgre2321 A1sad! A2A3A4 fv3fdv3J544K5L@'));
+// --------------------------------------------------------------------
+exports.stringClean = (s) => s.replace(/[0-9]/g, '');
+console.log(this.stringClean('A1 A1! AAA   3J4K5L@!!!'));
 // --------------------------------------------------------------------
 
 // Условие:

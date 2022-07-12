@@ -1,20 +1,9 @@
 // https://www.codewars.com/kata/58f8a3a27a5c28d92e000144
-exports.firstNonConsecutive = function firstNonConsecutive(arr) {
-  for (let i = 0; i < arr.length - 1; ++i) {
-    if (arr[i + 1] - arr[i] !== 1) {
-      return arr[i + 1];
-    }
-  }
-  return null;
-};
-console.log(this.firstNonConsecutive([1, 2, 3, 4, 5, 9, 7]));
-
-// не мое решение, но очень мне понравилось (тестом тоже проверил):
-// exports.firstNonConsecutive = function firstNonConsecutive(arr) {
-//   let result = arr.find((val, index) => val !== index + arr[0]);
-//   return Number.isInteger(result) ? result : null;
-// };
-// console.log(this.firstNonConsecutive([1, 2, 3, 4, 5, 9, 7]));
+exports.firstNonConsecutive = (arr) =>
+  Number.isInteger(arr.find((val, index) => val !== index + arr[0]))
+    ? arr.find((val, index) => val !== index + arr[0])
+    : null;
+console.log(this.firstNonConsecutive([1, 2, 3, 4, 6, 7, 8]));
 
 // Условие:
 // 1. Минимум 2 элемента;

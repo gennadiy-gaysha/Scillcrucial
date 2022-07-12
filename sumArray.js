@@ -1,22 +1,19 @@
-exports.sumArray = function sumArray(array) {
-  if (array === null) return 0;
-  else if (typeof array === 'undefined') return 0;
-  else if (array.length === 0) return 0;
-  else if (array.length === 1) return 0;
-  const result = array.reduce((acc, rec) => acc + rec, 0);
-  return result - Math.max(...array) - Math.min(...array);
-};
+exports.sumArray = (array) =>
+  Array.isArray(array) && array.length > 1
+    ? array.reduce((acc, rec) => acc + rec, 0) -
+      Math.max(...array) -
+      Math.min(...array)
+    : 0;
 console.log(this.sumArray([6, 2, 3, 8, 11, 10]));
 // ----------------------------------------------------------
-exports.sumArray = function sumArray(array) {
-  if (Array.isArray(array) && array.length >= 2) {
-    array.sort((a, b) => a - b);
-    array.pop();
-    array.shift();
-    return array.reduce((acc, rec) => acc + rec, 0);
-  }
-  return 0;
-};
+exports.sumArray = (array) =>
+  Array.isArray(array) && array.length > 1
+    ? array
+        .sort((a, b) => a - b)
+        .slice(1)
+        .slice(0, -1)
+        .reduce((acc, rec) => acc + rec, 0)
+    : 0;
 console.log(this.sumArray([6, 2, 3, 8, 11, 10]));
 // ----------------------------------------------------------
 

@@ -1,6 +1,6 @@
 const { firstNonConsecutive } = require('../firstNonConsecutive');
 
-describe('TestingfirstNonConsecutive function', function () {
+describe('Testing firstNonConsecutive function', function () {
   test('all positive with non consecutive', function () {
     const testCases = [
       {
