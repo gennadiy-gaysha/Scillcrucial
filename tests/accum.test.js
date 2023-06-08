@@ -2,7 +2,7 @@ const { accum } = require('../accum');
 
 describe('testing accum function', function () {
   test('testing with different types of characters', function () {
-    const testCase = [
+    const testCases = [
       { string: 'QWERTY', result: 'Q-Ww-Eee-Rrrr-Ttttt-Yyyyyy' },
       { string: 'qwerty', result: 'Q-Ww-Eee-Rrrr-Ttttt-Yyyyyy' },
       {
@@ -29,5 +29,8 @@ describe('testing accum function', function () {
           'A-Bb-Ccc-Dddd-Eeeee-Ffffff-Ggggggg-Hhhhhhhh-Iiiiiiiii-Jjjjjjjjjj-Kkkkkkkkkkk-Llllllllllll-Mmmmmmmmmmmmm-Nnnnnnnnnnnnnn-Ooooooooooooooo-Pppppppppppppppp-Qqqqqqqqqqqqqqqqq-Rrrrrrrrrrrrrrrrrr-Sssssssssssssssssss-Tttttttttttttttttttt-Uuuuuuuuuuuuuuuuuuuuu-Vvvvvvvvvvvvvvvvvvvvvv-Wwwwwwwwwwwwwwwwwwwwwww-Xxxxxxxxxxxxxxxxxxxxxxxx-Yyyyyyyyyyyyyyyyyyyyyyyyy-Zzzzzzzzzzzzzzzzzzzzzzzzzz',
       },
     ];
+    testCases.forEach((item) => {
+      expect(accum(item.string)).toBe(item.result);
+    });
   });
 });

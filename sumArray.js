@@ -16,6 +16,13 @@ exports.sumArray = (array) =>
     : 0;
 console.log(this.sumArray([6, 2, 3, 8, 11, 10]));
 // ----------------------------------------------------------
+exports.sumArray = (array) =>
+  Array.isArray(array) && array.length > 1
+    ? array.reduce((acc, rec) => acc + rec, 0) -
+      Math.max(...array) -
+      Math.min(...array)
+    : 0;
+console.log(this.sumArray([6, 2, 3, 8, 11, 10]));
 
 // Условие:
 // 1. на входе подается числовой массив, у которого могут быть повторяющиеся элементы;
